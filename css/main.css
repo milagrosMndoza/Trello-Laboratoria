@@ -4,13 +4,6 @@ body {
 	margin: 0;
 }
 
-.tablero h3{
-	font-size: 18px;
-	font-weight: 700;
-	padding-left: 4px;
-	color: whitesmoke;
-}
-
 header {
 	padding: 5px;
 	background-color: #0082A0;
@@ -26,9 +19,22 @@ h4 {
 	margin: 5px;
 }
 
-.primer-Input{
+input{
 	cursor: pointer;
 }
+
+.tablero h3{
+	font-size: 18px;
+	font-weight: 700;
+	padding-left: 4px;
+	color: whitesmoke;
+}
+.lista-nueva{
+	padding-top: 10px;
+    background-color: white;
+    
+}
+
 
 .boton-guardar {
 	display: none;
@@ -41,9 +47,12 @@ h4 {
 	display:block;
 }
 
-.contenedor-lista {
+.contenedor-tarea {
 	display: inline-block;
 	margin: 5px 10;
+    background-color: whitesmoke;
+	margin: 5px;
+	border-radius: 5px;
 
 }
 
@@ -53,16 +62,6 @@ h4 {
 	float:left;
 	margin: 5px;
 	border-radius: 5px;
-}
-
-.contenedor-lista {
-	background-color: whitesmoke;
-	margin: 5px;
-	border-radius: 5px;
-}
-
-.nueva-lista {
-	padding-top: 10px;
 }
 
 

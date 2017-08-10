@@ -1,3 +1,5 @@
+//enlazamos nuestro boton guardar-lista
+
 document.getElementById('guardar-lista').addEventListener('click', agregarLista);
 
 function Lista(titulo, id){
@@ -30,7 +32,7 @@ function agregarLista(){
   var nuevaTarea = document.createElement('div');
   nuevaTarea.id = "contenedor-tarea";
   var bTarea = document.createElement('button');
-  var cTarea = document.createTextNode('Añadir tarjeta');
+  var cTarea = document.createTextNode('Añadir Tarjeta');
   bTarea.id = "nueva-tarea";
 
   bTarea.appendChild(cTarea);
@@ -71,7 +73,7 @@ function agregarLista(){
 
         //validacion que input no este vacio
         if(tareas == null || tareas.length == 0){
-          alert('¡Error ! Debe ingresar una tarea');
+          alert('¡Error ! Debes ingresar una tarea');
           return false;
         }
 
@@ -88,7 +90,7 @@ function agregarLista(){
 
         nuevasTareas.appendChild(chck);
         nuevasTareas.appendChild(elementoContenedor);
-    	  contenedor.appendChild(nuevasTareas);
+        contenedor.appendChild(nuevasTareas);
         contenedor.removeChild(contenedorTarea);
     });
 
