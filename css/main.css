@@ -1,12 +1,14 @@
+/*Para mi encabezado*/
 header {
 	padding: 5px;
-	background-color: #0082A0;
+	background-color: #1661A5;
 	margin: 0 auto;
 	text-align: center;
 }
 
+/*Le pongo tamaño a mi imagen trello*/
 img {
-	width: 80px;
+	width: 100px;
 }
 
 body {
@@ -20,45 +22,44 @@ h4 {
 }
 
 .primer-Input{
-	cursor: pointer;
+	cursor: pointer;/*Para que al seleccionar mi input aparezca el cursor en forma de manito*/
 }
+/*Para que mi boton guardar no aparezca */
 button{
     display: none;
 }
-/*.boton-guardar {
-	display: none;
-	margin:5px;
+
+
+/*Para que se visualice mi boton al hacer clic en mi input*/
+.show {
+	display:inline-block;/*Hace que el elemento genere una caja de bloque.*/
+   	margin:5px;
 	background-color: #61BD4F;
 	color: white;
+}
+.show2 {
+	display:inline-block;/*Hace que un elemento se represente como una caja seguida de forma fluida, por un contenido, como si formase parte de la misma caja.*/
+   	outline: none;
+	background-color: transparent;
+	color: gray;
+    font-weight: 700;
 }
 
-.btnX{
-    display: none;
-	margin:2px;
-	background-color: red;
-	color: gray;
-    
-}*/
-.show {
-	display:block;
-   
-	margin:5px;
-	background-color: #61BD4F;
-	color: white;
-}
 
 .contenedor-lista {
-	display: inline-block;
+	display: inline-block;/*Hace que un elemento se represente como una caja seguida de forma fluida, por un contenido, como si formase parte de la misma caja.*/
 	margin: 5px 10;
     background-color: whitesmoke;
 	margin: 5px;
-	border-radius: 5px;
+	border-radius: 5px; 
 }
+
+/*Para que mi nuevo input aparezca al costado lo estoy en lazando con mi id lista-contenifo que está en mi archivo js en mi funcion guardar lista*/
 
 .lista-contenido {
 	background-color: whitesmoke;
 	display: block;
-	float:left;
+    float: left; /*float: Lo que hace la propiedad es quitar al elemento del flujo normal de la página y colocarlo a la izquierda o derecha del resto del contenido de su elemento padre*/
 	margin: 5px;
 	border-radius: 5px;
 }
