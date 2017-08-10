@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Trello</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
-  </head>
-  <body>
-
-   <header>
-		<img src="img/trello.png" alt="">
+	<title>Document</title>
+</head>
+<body>
+	<header>
+		<img src="img/descarga.svg" alt="">
 	</header>
-      <section class="tablero">
-		<h3>Tableros</h3>
-      <input type="text" id="añadir-lista"  placeholder="Agrega una lista">
-      <button type="button" name="button" id="guardar-lista">Guardar</button>
-      <button type="button" name="button">X</button>
-    </section>
-    <section id="lista-nueva">
-    </section>
-    <script src="js/main.js"></script>
-  </body>
+	<div class="nueva-lista">
+		<div class="contenedor-lista">
+			<input id="primerInput" type="text" class="primer-Input" placeholder="Añadir una lista...">
+			<div>
+				<button id="boton-guardar" >Guardar</button>
+				<button id="btnX">X</button>
+			</div>
+		</div>
+	</div>
+<script src="js/main.js"></script>
+</body>
 </html>

@@ -1,99 +1,53 @@
-//enlazamos nuestro boton guardar-lista
-
-document.getElementById('guardar-lista').addEventListener('click', agregarLista);
-
-function Lista(titulo, id){
-  this.titulo = titulo;
-  this.id = id;
-}
-
-function Tarea(tarea, id){
-  this.tarea = tarea;
-  this.id = id;
-}
-
-function agregarLista(){
-  var listas = [];
-
-  var title = document.getElementById('añadir-lista').value;
-  document.getElementById('añadir-lista').value = "";
-  var contenedor = document.getElementById('lista-nueva');
-
-  var nuevaLista = document.createElement('span');
-  var hTitulo = document.createElement('h3');
-  hTitulo.setAttribute('contenteditable', 'true');
-  var nuevoTitulo = document.createTextNode(title);
-
-  hTitulo.appendChild(nuevoTitulo);
-  nuevaLista.appendChild(hTitulo);
-  contenedor.appendChild(nuevaLista);
-
-  //agregar tarea
-  var nuevaTarea = document.createElement('div');
-  nuevaTarea.id = "contenedor-tarea";
-  var bTarea = document.createElement('button');
-  var cTarea = document.createTextNode('Añadir Tarjeta');
-  bTarea.id = "nueva-tarea";
-
-  bTarea.appendChild(cTarea);
-  nuevaTarea.appendChild(bTarea);
-  contenedor.appendChild(nuevaTarea);
-
-  var newLista = new Lista(title, nuevaTarea.id);
-  listas.push(newLista);
-
-  document.getElementById('nueva-tarea').addEventListener('click', agregarTarea);
-
-  function agregarTarea(){
-    var contenedor = document.getElementById('lista-nueva');
-    var contenedorTarea = document.createElement('div');
-    var textoArea = document.createElement('input');
-    textoArea.type = "textarea";
-    textoArea.id = "contenido-tarea";
-    textoArea.setAttribute('rows', '40');
-    textoArea.setAttribute('cols', '50');
-
-    var agregarTarea = document.createElement('button');
-    var contButton = document.createTextNode('Añadir');
-    agregarTarea.type = "button";
-    agregarTarea.id = "boton-tarea-nueva"
-
-    agregarTarea.appendChild(contButton);
-    contenedorTarea.appendChild(textoArea);
-    contenedorTarea.appendChild(agregarTarea);
-    contenedor.appendChild(contenedorTarea);
+//Se llama a los elementos input y boton
+var mInput = document.getElementById("primerInput");
+var contenedor = document.getElementById("contenedor-lista");
+var btnGuardar = document.getElementById('boton-guardar');
 
 
-    //Nuevas tareas
-    document.getElementById('boton-tarea-nueva').addEventListener('click', function(){
-        var contenedor = document.getElementById('lista-nueva');
-        var tareas = document.getElementById('contenido-tarea').value;
-        document.getElementById('contenido-tarea').value = "";
-        var nuevasTareas = document.createElement('div');
+mInput.addEventListener("click", function(){
+    btnGuardar.classList.toggle("show");
+});
 
-        //validacion que input no este vacio
-        if(tareas == null || tareas.length == 0){
-          alert('¡Error ! Debes ingresar una tarea');
-          return false;
-        }
+btnGuardar.addEventListener("click", guardarLista);
 
-        //checkbox
-        var chck = document.createElement('input');
-    	  chck.type = 'checkbox';
-    	  chck.setAttribute('class', 'check');
+//Funcion que crea Lista despues de ser clickeado
 
-        //tareas
-        var elementoContenedor = document.createElement('span');
-        elementoContenedor.setAttribute('contenteditable', 'true');
-    	  var textoNuevaTarea = document.createTextNode(tareas);
-        elementoContenedor.appendChild(textoNuevaTarea);
+function guardarLista(){
+	var mInput = document.getElementById("primerInput").value;
+	document.getElementById('primerInput').value = "";
+    //El método querySelector devuelve el primer elemento que coincide con un selector CSS especificado en el documento.
+	var espacioLista = document.querySelector(".nueva-lista");
+	var nuevoInputLista = document.createElement("div");
+    /*La propiedad classList devuelve el nombre de la clase de un elemento, como un objeto DOMTokenList.Esta propiedad es útil para agregar, quitar y alternar clases CSS en un elemento.
+    puede modificarla utilizando los métodos add () y remove ().*/
+	nuevoInputLista.classList.add("lista-contenido");
+	//creamos un div
+    var divHeader = document.createElement("div");
+	divHeader.classList.add("lista-header");
+	var listaHeader = document.createElement("h4");
+    listaHeader.setAttribute('contenteditable', 'true');
+	var h4Text = document.createTextNode(mInput);
+	var divEnlace = document.createElement("div");
+	var enlaceAgregarTarjeta = document.createElement("a");
+	var textoAgregarTarjeta = document.createTextNode("Añadir una tarjeta...");
+    
+    espacioLista.appendChild(nuevoInputLista);
+	nuevoInputLista.appendChild(divHeader);
+	divHeader.appendChild(listaHeader);
+	listaHeader.appendChild(h4Text);
+	nuevoInputLista.appendChild(divEnlace);
+	divEnlace.appendChild(enlaceAgregarTarjeta);
+	enlaceAgregarTarjeta.appendChild(textoAgregarTarjeta);
 
-        nuevasTareas.appendChild(chck);
-        nuevasTareas.appendChild(elementoContenedor);
-        contenedor.appendChild(nuevasTareas);
-        contenedor.removeChild(contenedorTarea);
+	enlaceAgregarTarjeta.addEventListener('click', function(){
+		var divCajaTexto = document.createElement("div");
+	   	var cajaTexto = document.createElement('textarea');
+			
+		nuevoInputLista.appendChild(divCajaTexto);
+		divCajaTexto.appendChild(cajaTexto);
+		divCajaTexto.appendChild(divEnlace);
     });
-
-  }
-
+    
 }
+    
+    
