@@ -5,6 +5,8 @@ var btnGuardar = document.getElementById('boton-guardar');
 
 
 mInput.addEventListener("click", function(){
+    
+    // Alternar entre agregar y quitar un nombre de clase de un elemento con JavaScript.
     btnGuardar.classList.toggle("show");
 });
 
@@ -24,8 +26,8 @@ function guardarLista(){
 	//creamos un div
     var divHeader = document.createElement("div");
 	divHeader.classList.add("lista-header");
-	var listaHeader = document.createElement("h4");
-    listaHeader.setAttribute('contenteditable', 'true');
+	var listaWrite = document.createElement("h4");
+    listaWrite.setAttribute('contenteditable', 'true');
 	var h4Text = document.createTextNode(mInput);
 	var divEnlace = document.createElement("div");
 	var enlaceAgregarTarjeta = document.createElement("a");
@@ -33,8 +35,8 @@ function guardarLista(){
     
     espacioLista.appendChild(nuevoInputLista);
 	nuevoInputLista.appendChild(divHeader);
-	divHeader.appendChild(listaHeader);
-	listaHeader.appendChild(h4Text);
+	divHeader.appendChild(listaWrite);
+	listaWrite.appendChild(h4Text);
 	nuevoInputLista.appendChild(divEnlace);
 	divEnlace.appendChild(enlaceAgregarTarjeta);
 	enlaceAgregarTarjeta.appendChild(textoAgregarTarjeta);

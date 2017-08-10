@@ -22,23 +22,29 @@ h4 {
 .primer-Input{
 	cursor: pointer;
 }
-
-.boton-guardar {
+button{
+    display: none;
+}
+/*.boton-guardar {
 	display: none;
-	margin:4px;
+	margin:5px;
 	background-color: #61BD4F;
 	color: white;
 }
 
 .btnX{
     display: none;
-	margin:4px;
+	margin:2px;
 	background-color: red;
 	color: gray;
     
-}
+}*/
 .show {
 	display:block;
+   
+	margin:5px;
+	background-color: #61BD4F;
+	color: white;
 }
 
 .contenedor-lista {
